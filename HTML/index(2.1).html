@@ -1,0 +1,86 @@
+<!Doctype html>
+	<html>
+		<head>
+			<meta charset="UTF8">
+			<style>
+				body{
+					background-image: url(2.jpg);
+				}
+				#text-1{
+					width: 400px;
+					height: 33px;
+					border-radius: 3px;
+					margin-left: 33%;
+					margin-top: 1%;
+					border: 1px solid blue;
+					text-align: center; 
+					display: block;
+					box-shadow: 0 0 30px #00ff5d;
+					color:;
+					font-weight: bold;
+				}
+				#text-2{
+					width: 400px;
+					height: 33px;
+					border-radius: 3px;
+					margin-left: 33%;
+					margin-top: 1%;
+					border: 1px solid blue;
+					text-align: center; 
+					display: block;
+					box-shadow: 0 0 30px #00ff5d;
+				}
+				#button{
+					width: 200px;
+					height: 33px;
+					border-radius: 7px;
+					color: #35cece;
+					margin-left: 33%;
+					margin-top: 3%;
+					background-color: #4b4ee5;
+					outline: none;
+					box-shadow: 0 0 20px #0004ff;
+					border: 1px solid #9347e5;
+					cursor: pointer;
+					font-weight: bold;
+				}
+				#button:active{
+					background-color: #0700ed;
+				}
+				#button:hover{
+					box-shadow: 0 0 20px #c7f400;
+				}
+				#button:active{
+					color: white;
+				}
+				.h{
+					margin-left: 33%;
+					margin-top: 15%;
+					color: #ffd800;
+				}
+			</style>
+		</head>
+		<body>
+			<h1 class='h'>Вход в аккаунт.</h1>
+			<form>
+				<input type='text' placeholder='Введите логин.' required id='text-1'>
+				<input type='password' placeholder='Введите пароль.' required id='text-2'>
+				<a href='file:///H:/SegrysProject/version%201.0%20(3).html'><button id='button' name='a'>Войти в аккаунт.</button></a>
+			</form>
+			<script>
+				'use strict'
+				let text1 = document.getElementByID('text-1');
+				let text2 = document.getElementByID('text-2');
+				let button = document.getElementByID('button')
+				button.addEventListener('click', function(){
+					if(text1===login&text2===password){
+						continue;
+					}
+					else
+					{
+						alert('Введён неправильный логин или пароль.')
+					};
+				}); 
+			</script>
+		</body>
+	</html>
