@@ -1,0 +1,123 @@
+<!Doctype html>
+	<html>
+		<head>
+			<meta charset="UTF8">
+			<style>
+				body{
+					background-image: url(1.jpg);
+					background-size: cover;
+					}
+				.div{
+					margin-left: 30%;
+					margin-right: 30%;
+					margin-top: 10%;
+				}
+				.text-1{
+					width: 60%;
+					height: 30px;
+					border-radius: 5px;
+					text-align: center;
+					outline: none;
+					border: 2px solid #4248f4;
+					box-shadow: 0 0 50px #4248f4;
+					background-color: #c3dff4;
+					color: #474def;
+					font-weight: bold;
+				}
+				.select{
+					height: 33px;
+					border-radius: 7px;
+					color: #35cece;
+					background-color: #4b4ee5;
+					outline: none;
+					box-shadow: 0 0 20px #0004ff;
+					border: 1px solid #9347e5;
+					cursor: pointer;
+					font-weight: bold;
+				}
+				.select:hover{
+					box-shadow: 0 0 20px #c7f400;
+				}
+				.select:active{
+					color: white;
+				}
+				.span-1{
+					font-weight: bold;
+					font-size: 25px;
+					color: #20e1e8;
+				}
+				.span-2{
+					font-size: 20px;
+					font-weight: bold;
+					color: #20e1e8;
+				}
+				.button-1{
+					height: 33px;
+					border-radius: 7px;
+					color: #35cece;
+					background-color: #4b4ee5;
+					outline: none;
+					box-shadow: 0 0 20px #0004ff;
+					border: 1px solid #9347e5;
+					cursor: pointer;
+					font-weight: bold;
+					margin-left: 89%;
+				}
+				.button-1:active{
+					background-color: #0700ed;
+				}
+				.button-2:active{
+					background-color: #0700ed;
+				}
+				.button-2{
+					height: 33px;
+					border-radius: 7px;
+					color: #35cece;
+					background-color: #4b4ee5;
+					outline: none;
+					box-shadow: 0 0 20px #0004ff;
+					border: 1px solid #9347e5;
+					cursor: pointer;
+					font-weight: bold;
+					margin-top: 3%;
+					margin-left: 50%;
+				}
+				.date{
+					height: 33px;
+					border-radius: 7px;
+					color: #35cece;
+					background-color: #4b4ee5;
+					outline: none;
+					box-shadow: 0 0 20px #0004ff;
+					border: 1px solid #9347e5;
+					cursor: pointer;
+					font-weight: bold;
+					margin-top: 3%;
+				}
+			</style>
+		</head>
+		<body>
+			<a href='file:///H:/SegrysProject/version%201.0%20(1).html'><button class='button-1'>Выйти из аккаунта.</button></a>
+			<div class="div">
+				<form>
+					<input type='text' placeholder='Введите сумму, которая у вас есть на данный момент.' class='text-1' required>
+					<span class='span-1'>Валюта-</span>	
+					<select class='select'>
+						<option>"R"(Рубли.)</option>
+						<option>"$"(Доллары.)</option>
+						<option>"₴"(Гривны.)</option>
+						<option>"₸"(Тенге.)</option>
+					</select><br>
+					<span class='span-2'>Введите время на которое вы<br>расчитываете растянуть деньги.</span><br>
+					<input type='date' class='date' required><br>
+					<button class='button-2'>Сохранить.</button>
+				</form>
+			</div>
+			<div id='div1'>
+				<h1></h1>
+			</div>
+			<script>
+				'use strict'
+			</script>
+		</body>
+	</html>
