@@ -91,15 +91,13 @@
 		</head>
 		<body>
 			<h1 class='h'>Регистрация аккаунта.</h1>
-				<span class='h1'>Обязательное поле.</span>
-			<form>
-				<input type='text' placeholder='Введите логин.' required id='text-1'>
-				<span class='h2'>Обязательное поле.</span>
-				<input type='password' placeholder='Введите пароль.' required id='text-2'>
-				<span class='h2'>Обязательное поле.</span>
-				<input type='password' placeholder='Повторите пароль.' required id='text-3'>
-				<a href='file:///H:/SegrysProject/version%201.0%20(3).html'><button id='button'>Создать аккаунт.</button></a>	
-			</form>
+			span class='h1'>Обязательное поле.</span>
+			<input type='text' placeholder='Введите логин.' required id='text-1'>
+			<span class='h2'>Обязательное поле.</span>
+			<input type='password' placeholder='Введите пароль.' required id='text-2'>
+			<span class='h2'>Обязательное поле.</span>
+			<input type='password' placeholder='Повторите пароль.' required id='text-3'>
+			<button id='button'>Создать аккаунт.</button>	
 			<script>
 				'use strict'
 				let login = document.getElementById('text-1');
@@ -107,14 +105,29 @@
 				let password2 = document.getElementById('text-3');
 				let button = document.getElementById('button');
 				button.addEventListener('click', function(){
-					if(password!==password2){
-						alert('Пароли не совпадают.')
-						break;
+					let a = document.getElementById('text-1').value;
+					let a1 = document.getElementById('text-2').value;
+					let a2 = document.getElementById('text-3').value;
+					if(login.checkValidity()&password.checkValidity()&password2.checkValidity()){
+						if(a[0]!=" "&a1[0]!=" "&a2[0]!=" "){
+							if(a1 === a2){
+								localStorage.setItem('login3965', a);
+								localStorage.setItem('password3965', a1);	
+								location.href = 'file:///H:/SegrysProject/version%201.0%20(3).html';
+							}
+							else
+							{
+								alert("Пароли не совпадают.")
+							};
+						}
+						else
+						{
+							alert("В строках 1 элемент не должен быть пробелом.")
+						}
 					}
 					else
 					{
-					localStorage.addItem('login', login.value);
-					localStorage.addItem('password', password.value);
+						alert("Не все обязательные поля были заполнены.")
 					};
 				});
 			</script>
