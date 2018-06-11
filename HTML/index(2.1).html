@@ -1,86 +1,75 @@
 <!Doctype html>
-	<html>
-		<head>
-			<meta charset="UTF8">
-			<style>
-				body{
-					background-image: url(2.jpg);
-				}
-				#text-1{
-					width: 400px;
-					height: 33px;
-					border-radius: 3px;
-					margin-left: 33%;
-					margin-top: 1%;
-					border: 1px solid blue;
-					text-align: center; 
-					display: block;
-					box-shadow: 0 0 30px #00ff5d;
-					color:;
-					font-weight: bold;
-				}
-				#text-2{
-					width: 400px;
-					height: 33px;
-					border-radius: 3px;
-					margin-left: 33%;
-					margin-top: 1%;
-					border: 1px solid blue;
-					text-align: center; 
-					display: block;
-					box-shadow: 0 0 30px #00ff5d;
-				}
-				#button{
-					width: 200px;
-					height: 33px;
-					border-radius: 7px;
-					color: #35cece;
-					margin-left: 33%;
-					margin-top: 3%;
-					background-color: #4b4ee5;
-					outline: none;
-					box-shadow: 0 0 20px #0004ff;
-					border: 1px solid #9347e5;
-					cursor: pointer;
-					font-weight: bold;
-				}
-				#button:active{
-					background-color: #0700ed;
-				}
-				#button:hover{
-					box-shadow: 0 0 20px #c7f400;
-				}
-				#button:active{
-					color: white;
-				}
-				.h{
-					margin-left: 33%;
-					margin-top: 15%;
-					color: #ffd800;
-				}
-			</style>
-		</head>
-		<body>
-			<h1 class='h'>Вход в аккаунт.</h1>
-			<form>
-				<input type='text' placeholder='Введите логин.' required id='text-1'>
-				<input type='password' placeholder='Введите пароль.' required id='text-2'>
-				<a href='file:///H:/SegrysProject/version%201.0%20(3).html'><button id='button' name='a'>Войти в аккаунт.</button></a>
-			</form>
-			<script>
-				'use strict'
-				let text1 = document.getElementByID('text-1');
-				let text2 = document.getElementByID('text-2');
-				let button = document.getElementByID('button')
-				button.addEventListener('click', function(){
-					if(text1===login&text2===password){
-						continue;
-					}
-					else
-					{
-						alert('Введён неправильный логин или пароль.')
-					};
-				}); 
-			</script>
-		</body>
-	</html>
+<html>
+	<head>
+		<style>
+			/*body{
+				font-family: 
+			}*/
+			.app{
+				width: 300px;
+				margin: 50px auto;
+			}
+			.h{
+				color: #c4daff;
+			}
+			#user-input{
+				border-radius: 3px;
+				border: 1px solid blue;
+				outline: none;
+				height: 30px;
+				width: 180px;
+				font-size: 22px;
+				color: blue;
+				box-shadow: 0 0 10px blue;
+			}
+			#add-product{
+				height: 34px;
+				vertical-align: top;
+				background-color: #c4daff;
+				color: blue;
+				border: 1px solid black;
+				border-radius: 3px;
+				outline: none;
+				cursor: pointer;
+				box-shadow: 0 0 10px blue;
+			}
+			#user-product:focus{
+				caret-color: #84b2ff;
+				border: 1px solid #84b2ff;
+			}
+			#add-product:active{
+				background-color: #84b2ff;
+				color: white;
+			}
+			#add-product:hover{
+				border: 1px solid #84b2ff;
+			}
+			#list{
+				font-size: 30px;
+				color: #84b2ff;	
+			}
+		</style>
+	</head>
+	<body>
+		<div class='app'>
+			<h1 class='h'>Список покупок.</h1>
+			<input type='text' id='user-input'>
+			<button id='add-product'>Добавить.</button>
+			<ul id=list>
+			</ul>
+		</div>
+		<script>
+			'use strict';
+			let button = document.getElementById('add-product');
+			button.addEventListener('click', function(){
+				let input = document.getElementById('user-input');
+				let product = input.value;
+				let list = document.getElementById('list');
+				let newElement = document.createElement('li');
+				list.appendChild(newElement).innerHTML = product;
+				localStorage.setItem('product', input.value);
+				input.value='';
+			});
+		</script>
+	</body>
+</html>
