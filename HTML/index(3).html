@@ -80,9 +80,11 @@
 				}
 				.button-1:active{
 					background-color: #0700ed;
+					color: white;
 				}
 				#button-2:active{
 					background-color: #0700ed;
+					color: white;
 				}
 				#button-2{
 					height: 33px;
@@ -97,6 +99,7 @@
 				}
 				#button-3:active{
 					background-color: #0700ed;
+					color: white;
 				}
 				#button-3{
 					height: 33px;
@@ -135,13 +138,43 @@
 				#div1 h1{
 					color: #20e1e8;
 				}
+				#button-4:active{
+					background-color: #0700ed;
+					color: white;
+				}
+				#button-4{
+					height: 33px;
+					border-radius: 7px;
+					color: #35cece;
+					background-color: #4b4ee5;
+					outline: none;
+					box-shadow: 0 0 20px #0004ff;
+					border: 1px solid #9347e5;
+					cursor: pointer;
+					font-weight: bold;
+					margin-left: 89%;
+					margin-top: 1%;
+				}
+				.button-1:hover{
+					box-shadow: 0 0 20px #c7f400;
+				}
+				#button-4:hover{
+					box-shadow: 0 0 20px #c7f400;
+				}
+				#button-3:hover{
+					box-shadow: 0 0 20px #c7f400;
+				}
+				#button-2:hover{
+					box-shadow: 0 0 20px #c7f400;
+				}
 			</style>
 		</head>
 		<body>
 			<a href='file:///H:/SegrysProject/version%201.0%20(1).html'><button class='button-1'>Выйти из аккаунта.</button></a>
+			<button id='button-4'>Удалить аккаунт.</button>
 			<div class="div">
 				<textarea type='text' placeholder='Введите сумму, которая у вас есть на данный момент.' id='text-1'	></textarea>
-				<span class='span-21'>Валюта-</span>	
+				<span class='span-2'>Валюта-</span>	
 				<select id='select'>
 					<option value = " руб.">"R", Рубли.</option>
 					<option value = "$">"$", Доллары.</option>
@@ -163,6 +196,7 @@
 				'use strict'
 				let button = document.getElementById("button-2");
 				let button2 = document.getElementById("button-3");
+				let button3 = document.getElementById("button-4");
 				let select = document.getElementById("select");
 				let text  = document.getElementById("text-1");
 				let text1 = document.getElementById("date");
@@ -215,6 +249,18 @@
 				function isDigit(str) {
 					return str && !/[^\d]/.test(str);
 				};
+
+				button3.addEventListener('click', function(){
+					localStorage.removeItem('date');
+					localStorage.removeItem('select');
+					localStorage.removeItem('text');
+					localStorage.removeItem('pre-last');
+					localStorage.removeItem('today');
+					localStorage.removeItem('last');
+					localStorage.removeItem('login3965');
+					localStorage.removeItem('password3965');
+					location.href = 'file:///H:/SegrysProject/version%201.0%20(1).html';
+				});
 
 				button.addEventListener('click', function(){
 					
