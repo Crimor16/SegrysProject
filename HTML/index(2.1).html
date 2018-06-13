@@ -35,7 +35,27 @@
 					height: 33px;
 					border-radius: 7px;
 					color: #35cece;
+					margin-top: 3%;
 					margin-left: 33%;
+					background-color: #4b4ee5;
+					outline: none;
+					box-shadow: 0 0 20px #0004ff;
+					border: 1px solid #9347e5;
+					cursor: pointer;
+					font-weight: bold;
+				}
+				#button:active{
+					background-color: #0700ed;
+					color: white;
+				}
+				#button:hover{
+					box-shadow: 0 0 20px #c7f400;
+				}
+				#button1{
+					width: 200px;
+					height: 33px;
+					border-radius: 7px;
+					color: #35cece;
 					margin-top: 3%;
 					background-color: #4b4ee5;
 					outline: none;
@@ -46,25 +66,37 @@
 				}
 				#button:active{
 					background-color: #0700ed;
+					color: white;
 				}
 				#button:hover{
 					box-shadow: 0 0 20px #c7f400;
-				}
-				#button:active{
-					color: white;
 				}
 				.h{
 					margin-left: 33%;
 					margin-top: 15%;
 					color: #ffd800;
 				}
+				.span-1{
+					font-weight: bold;
+					font-size: 15px;
+					color: #20e1e8;
+					margin-left: 33%;
+				}
+				a{
+					text-decoration: none;
+				}
+				.span-1:hover{
+					color: #4b4ee5;
+				}
 			</style>
 		</head>
 		<body>
+			<a href="file:///H:/SegrysProject/version%201.0%20(1).html"><button id='button1'>Вернуться на главную страницу.</button></a>
 			<h1 class='h'>Вход в аккаунт.</h1>
 			<input type='text' placeholder='Введите логин.' required id='text-1'>
 			<input type='password' placeholder='Введите пароль.' required id='text-2'>
-			<button id='button' name='a'>Войти в аккаунт.</button>
+			<button id='button' name='a'>Войти в аккаунт.</button><br>
+			<a href="file:///H:/SegrysProject/version%201.0%20(2.1).html"><span class="span-1">Ещё нет аккаунта?</span></a>
 			<script>
 				'use strict'
 				let text1 = document.getElementById('text-1');
