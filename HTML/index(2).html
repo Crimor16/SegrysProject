@@ -67,6 +67,28 @@
 				#button:active{
 					color: white;
 				}
+				#button1{
+					width: 200px;
+					height: 33px;
+					border-radius: 7px;
+					color: #35cece;
+					margin-top: 3%;
+					background-color: #4b4ee5;
+					outline: none;
+					box-shadow: 0 0 20px #0004ff;
+					border: 1px solid #9347e5;
+					cursor: pointer;
+					font-weight: bold;
+				}
+				#button1:active{
+					background-color: #0700ed;
+				}
+				#button1:hover{
+					box-shadow: 0 0 20px #c7f400;
+				}
+				#button1:active{
+					color: white;
+				}
 				.h{
 					margin-left: 33%;
 					margin-top: 15%;
@@ -87,23 +109,38 @@
 					font-size: 20px;
 					font-weight: bold;
 				}
+				.span-1{
+					font-weight: bold;
+					font-size: 15px;
+					color: #20e1e8;
+					margin-left: 33%;
+				}
+				a{
+					text-decoration: none;
+				}
+				.span-1:hover{
+					color: #4b4ee5;
+				}
 			</style>
 		</head>
 		<body>
+			<a href="file:///H:/SegrysProject/version%201.0%20(1).html"><button id='button1'>Вернуться на главную страницу.</button></a>
 			<h1 class='h'>Регистрация аккаунта.</h1>
-			span class='h1'>Обязательное поле.</span>
+			<span class='h1'>Обязательное поле.</span>
 			<input type='text' placeholder='Введите логин.' required id='text-1'>
 			<span class='h2'>Обязательное поле.</span>
 			<input type='password' placeholder='Введите пароль.' required id='text-2'>
 			<span class='h2'>Обязательное поле.</span>
 			<input type='password' placeholder='Повторите пароль.' required id='text-3'>
-			<button id='button'>Создать аккаунт.</button>	
+			<button id='button'>Создать аккаунт.</button><br>
+			<a href="file:///H:/SegrysProject/version%201.0%20(2.2).html"><span class="span-1">Уже есть аккаунт?</span></a>	
 			<script>
 				'use strict'
 				let login = document.getElementById('text-1');
 				let password = document.getElementById('text-2');
 				let password2 = document.getElementById('text-3');
 				let button = document.getElementById('button');
+				alert("Внимание!\nЕсли вы при уже имеющимся аккаунте создадите новый, то старый аккаунт полностью удалится и заменится на этот.");
 				button.addEventListener('click', function(){
 					let a = document.getElementById('text-1').value;
 					let a1 = document.getElementById('text-2').value;
@@ -112,7 +149,15 @@
 						if(a[0]!=" "&a1[0]!=" "&a2[0]!=" "){
 							if(a1 === a2){
 								localStorage.setItem('login3965', a);
-								localStorage.setItem('password3965', a1);	
+								localStorage.setItem('password3965', a1);
+
+								localStorage.removeItem('date');
+								localStorage.removeItem('select');
+								localStorage.removeItem('text');
+								localStorage.removeItem('pre-last');
+								localStorage.removeItem('today');
+								localStorage.removeItem('last');
+									
 								location.href = 'file:///H:/SegrysProject/version%201.0%20(3).html';
 							}
 							else
