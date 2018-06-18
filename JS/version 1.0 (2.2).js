@@ -10,11 +10,17 @@
 					let password = localStorage.getItem('password3965');
 
 					if(text1.checkValidity()&text2.checkValidity()){
-						if(login!=a|a1!=password){
-							alert("Был введён неверный логин или пароль.")
+						if(login!=undefined){
+							if(login!=a|a1!=password){
+								alert("Был введён неверный логин или пароль.")
+							}
+							else{	
+								location.href = '../HTML/version 1.0 (3).html';
+							};
 						}
-						else{	
-							location.href = '../HTML/version 1.0 (3).html';
+						else
+						{
+							alert("На этом компьютере аккаунта не существует.\nСоздайте его по ссылке ниже.");
 						};
 						
 					}
