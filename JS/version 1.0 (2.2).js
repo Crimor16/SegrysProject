@@ -14,7 +14,7 @@
 							alert("Был введён неверный логин или пароль.")
 						}
 						else{	
-							location.href = 'version 1.0 (3).html';
+							location.href = '../HTML/version 1.0 (3).html';
 						};
 						
 					}
