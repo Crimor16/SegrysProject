@@ -1,5 +1,6 @@
 				body{
-					background-color: #1c1b1b;
+					background-image: url(..\Pictures\1.jpg);
+					background-size: cover;
 					}
 				.div{
 					margin-left: 20%;
