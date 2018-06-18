@@ -21,7 +21,7 @@
 								localStorage.removeItem('today');
 								localStorage.removeItem('last');
 									
-								location.href = 'version 1.0 (3).html';
+								location.href = '../HTML/version 1.0 (3).html';
 							}
 							else
 							{
