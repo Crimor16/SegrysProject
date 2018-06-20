@@ -46,63 +46,8 @@
 					c = l5;
 					c = +c;
 				};
-				let l6 = localStorage.getItem("time");
-				if(l6!=undefined){
-					let now2 = l6;
-					if(now2>b1){
-						b1=b1-1;
-						date.value = b1;
-						localStorage.setItem('date', b1);
-						localStorage.setItem('time', now);
-						div.appendChild(h1).innerHTML = "Сегодня вам стоит потратить не больше " +Math.round(c) +select.value;
-						if(Math.round(c)<0){
-							d1 = b2-(c1);
-							c = c1;
-							localStorage.setItem('last', c);
-							c = c+d1;
-							localStorage.setItem('last', c);
-							alert("Увы! Вы потратили больше нормы на " +Math.round(-d1) +select.value);
-							alert("Теперь ваша дозволенная трата на завтра уменьшится на " +Math.round(-d1) +select.value);
-							div.appendChild(h1).innerHTML = "Сегодня вам стоит потратить не больше " +Math.round(c) +select.value;
-						}
-						else
-						if(Math.round(c)>0){
-							d1 = c1-b2;
-							c = c1;
-							localStorage.setItem('last', c);
-							c = c+d1;
-							localStorage.setItem('last', c);
-							alert("Вау! Вы сэкономили " +Math.round(d1) +select.value);
-							alert("Теперь ваша дозволенная трата на завтра увеличится на " +Math.round(d1) +select.value);
-							div.appendChild(h1).innerHTML = "Сегодня вам стоит потратить не больше " +Math.round(c) +select.value;
-						}
-						else
-						if(Math.round(c) === 0){
-							c = c1;
-							alert("Так держать! Сегодня вы потратили не больше дозволенного.")
-							div.appendChild(h1).innerHTML = "Сегодня вам стоит потратить не больше " +Math.round(c) +select.value;
-							localStorage.setItem('last', c);
-
-						}
-					}
-					else
-					if(b1===0){
-						alert("Поздравляем, вы выжили.");
-						text.value = "";
-						date.value = "";	
-						text2.value = "";
-						select.value = " руб."; 
-						div.appendChild(h1).innerHTML = "";
-						localStorage.removeItem('date');
-						localStorage.removeItem('select');
-						localStorage.removeItem('text');
-						localStorage.removeItem('pre-last');
-						localStorage.removeItem('today');
-						localStorage.removeItem('last');
-					};
-				};
 				if(c!=undefined&select.value!=undefined){
-					div.appendChild(h1).innerHTML = "Сегодня вам стоит потратить не больше " +Math.round(c) +select.value;
+					div.appendChild(h1).innerHTML = "Завтра вам стоит потратить не больше " +Math.round(c) +select.value;
 				};
 
 				function isDigit(str) {
@@ -111,7 +56,7 @@
 
 				button3.addEventListener('click', function(){
 					text.value = "";
-					date.value = "";	
+					date.value = "";
 					text2.value = "";
 					select.value = " руб."; 
 					div.appendChild(h1).innerHTML = "";
@@ -139,10 +84,7 @@
 						localStorage.setItem('last', c);
 						c1 = c;
 						localStorage.setItem('pre-last', c1);
-						let now = new Date;
-						let now1 = now.getDate();
-						localStorage.setItem('time', now1);
-						div.appendChild(h1).innerHTML = "Сегодня вам стоит потратить не больше " +Math.round(c) +select.value;
+						div.appendChild(h1).innerHTML = "Завтра вам стоит потратить не больше " +Math.round(c) +select.value;
 					}
 					else
 					{
@@ -158,13 +100,59 @@
 					else
 					{	
 						if((isDigit(text2.value)) === true){
-							b2 = (+text2.value);
-							c = c-b2;
-							div.appendChild(h1).innerHTML = "Сегодня вам стоит потратить не больше " +Math.round(c) +select.value;
-							localStorage.setItem('last', c);
-							if(Math.round(c) === 0){
-								alert("Сегодня вам не стоит больше ничего покупать.")
+							b1=b1-1;
+							date.value = b1;
+							localStorage.setItem('date', b1);
+							if(b1>0){
+								let a1 = text2.value;
+								b2 = +a1;
+								c = +c;
+								localStorage.setItem('today', b2);
+								if(Math.round(c)<b2){
+									d1 = c-b2;
+									c = c1;
+									localStorage.setItem('last', c);
+									c = c+d1;
+									localStorage.setItem('last', c);
+									alert("Увы! Вы потратили больше нормы на " +Math.round(-d1) +select.value);
+									alert("Теперь ваша дозволенная трата на завтра уменьшится на " +Math.round(-d1) +select.value);
+									div.appendChild(h1).innerHTML = "Завтра вам стоит потратить не больше " +Math.round(c) +select.value;
+								}
+								else
+								if(Math.round(c)>b2){
+									d1 = c-b2;
+									c = c1;
+									localStorage.setItem('last', c);
+									c = c+d1;
+									localStorage.setItem('last', c);
+									alert("Вау! Вы сэкономили " +Math.round(d1) +select.value);
+									alert("Теперь ваша дозволенная трата на завтра увеличится на " +Math.round(d1) +select.value);
+									div.appendChild(h1).innerHTML = "Завтра вам стоит потратить не больше " +Math.round(c) +select.value;
+								}
+								else
+								if(Math.round(c)===b2){
+									c = c1;
+									alert("Так держать! Сегодня вы потратили не больше дозволенного.")
+									div.appendChild(h1).innerHTML = "Завтра вам стоит потратить не больше " +Math.round(c) +select.value;
+									localStorage.setItem('last', c);
+
+								}
 							}
+							else
+							if(b1===0){
+								alert("Поздравляем, вы выжили.");
+								text.value = "";
+								date.value = "";
+								text2.value = "";
+								select.value = " руб."; 
+								div.appendChild(h1).innerHTML = "";
+								localStorage.removeItem('date');
+								localStorage.removeItem('select');
+								localStorage.removeItem('text');
+								localStorage.removeItem('pre-last');
+								localStorage.removeItem('today');
+								localStorage.removeItem('last');
+							};
 						}	
 						else
 						{
