@@ -47,7 +47,7 @@
 					c = +c;
 				};
 				if(c!=undefined&select.value!=undefined){
-					div.appendChild(h1).innerHTML = "Завтра вам стоит потратить не больше " +c +select.value;
+					div.appendChild(h1).innerHTML = "Завтра вам стоит потратить не больше " +Math.round(c) +select.value;
 				};
 
 				function isDigit(str) {
