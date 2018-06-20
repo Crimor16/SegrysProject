@@ -4,7 +4,6 @@
 				let button3 = document.getElementById("button-4");
 				let select = document.getElementById("select");
 				let text  = document.getElementById("text-1");
-				let text1 = document.getElementById("date");
 				let text2 = document.getElementById("text-2");
 				let date = document.getElementById("date");
 				let div = document.getElementById("div1");
@@ -80,7 +79,7 @@
 						localStorage.setItem('last', c);
 						c1 = c;
 						localStorage.setItem('pre-last', c1);
-						div.appendChild(h1).innerHTML = "Завтра вам стоит потратить не больше " +c +select.value;
+						div.appendChild(h1).innerHTML = "Завтра вам стоит потратить не больше " +Math.round(c) +select.value;
 					}
 					else
 					{
@@ -110,9 +109,9 @@
 									localStorage.setItem('last', c);
 									c = c+d1;
 									localStorage.setItem('last', c);
-									alert("Увы! Вы потратили больше нормы на " +(-d1) +select.value);
-									alert("Теперь ваша дозволенная трата на завтра уменьшится на " +(-d1) +select.value);
-									div.appendChild(h1).innerHTML = "Завтра вам стоит потратить не больше " +c +select.value;
+									alert("Увы! Вы потратили больше нормы на " +Math.round(-d1) +select.value);
+									alert("Теперь ваша дозволенная трата на завтра уменьшится на " +Math.round(-d1) +select.value);
+									div.appendChild(h1).innerHTML = "Завтра вам стоит потратить не больше " +Math.round(c) +select.value;
 								}
 								else
 								if(c>b2){
@@ -121,15 +120,15 @@
 									localStorage.setItem('last', c);
 									c = c+d1;
 									localStorage.setItem('last', c);
-									alert("Вау! Вы сэкономили " +d1 +select.value);
-									alert("Теперь ваша дозволенная трата на завтра увеличится на " +d1 +select.value);
-									div.appendChild(h1).innerHTML = "Завтра вам стоит потратить не больше " +c +select.value;
+									alert("Вау! Вы сэкономили " +Math.round(d1) +select.value);
+									alert("Теперь ваша дозволенная трата на завтра увеличится на " +Math.round(d1) +select.value);
+									div.appendChild(h1).innerHTML = "Завтра вам стоит потратить не больше " +Math.round(c) +select.value;
 								}
 								else
 								if(c===b2){
 									c = c1;
 									alert("Так держать! Сегодня вы потратили не больше дозволенного.")
-									div.appendChild(h1).innerHTML = "Завтра вам стоит потратить не больше " +c +select.value;
+									div.appendChild(h1).innerHTML = "Завтра вам стоит потратить не больше " +Math.round(c) +select.value;
 									localStorage.setItem('last', c);
 
 								}
@@ -138,7 +137,7 @@
 							if(b1===0){
 								alert("Поздравляем, вы выжили.");
 								text.value = "";
-								text1.value = "";
+								date.value = "";
 								text2.value = "";
 								select.value = " руб."; 
 								div.appendChild(h1).innerHTML = "";
