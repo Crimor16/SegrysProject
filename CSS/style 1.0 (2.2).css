@@ -11,8 +11,9 @@
 					text-align: center; 
 					display: block;
 					box-shadow: 0 0 30px #00ff5d;
-					color:;
+					color: #4b4ee5;
 					font-weight: bold;
+					font-family: sans-serif;
 				}
 				#text-2{
 					width: 400px;
@@ -24,6 +25,8 @@
 					text-align: center; 
 					display: block;
 					box-shadow: 0 0 30px #00ff5d;
+					color: #4b4ee5;
+					font-family: sans-serif;
 				}
 				#button{
 					width: 200px;
@@ -38,6 +41,7 @@
 					border: 1px solid #9347e5;
 					cursor: pointer;
 					font-weight: bold;
+					font-family: sans-serif;
 				}
 				#button:active{
 					background-color: #0700ed;
@@ -57,6 +61,7 @@
 					box-shadow: 0 0 20px #0004ff;
 					border: 1px solid #9347e5;
 					cursor: pointer;
+					font-family: sans-serif;
 					font-weight: bold;
 				}
 				#button1:active{
@@ -69,6 +74,7 @@
 				.h{
 					margin-left: 33%;
 					margin-top: 15%;
+					font-family: sans-serif;
 					color: #ffd800;
 				}
 				.span-1{
@@ -76,9 +82,11 @@
 					font-size: 15px;
 					color: #20e1e8;
 					margin-left: 33%;
+					font-family: sans-serif;
 				}
 				a{
 					text-decoration: none;
+					font-family: sans-serif;
 				}
 				.span-1:hover{
 					color: #4b4ee5;
